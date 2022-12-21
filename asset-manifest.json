@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/bucket-list-bingo/static/css/main.19d1c7d8.css",
+    "main.css": "/bucket-list-bingo/static/css/main.4f2d6be4.css",
     "main.js": "/bucket-list-bingo/static/js/main.142448d2.js",
     "static/js/787.c0bfa0a2.chunk.js": "/bucket-list-bingo/static/js/787.c0bfa0a2.chunk.js",
     "static/media/background.png": "/bucket-list-bingo/static/media/background.b3760192420fd069526c.png",
@@ -17,12 +17,12 @@
     "static/media/NanumBarunGothicLight.woff2": "/bucket-list-bingo/static/media/NanumBarunGothicLight.67f8c16179c0ee1d739f.woff2",
     "static/media/NanumBarunGothic.woff2": "/bucket-list-bingo/static/media/NanumBarunGothic.b84c06c23d4a57a9c352.woff2",
     "index.html": "/bucket-list-bingo/index.html",
-    "main.19d1c7d8.css.map": "/bucket-list-bingo/static/css/main.19d1c7d8.css.map",
+    "main.4f2d6be4.css.map": "/bucket-list-bingo/static/css/main.4f2d6be4.css.map",
     "main.142448d2.js.map": "/bucket-list-bingo/static/js/main.142448d2.js.map",
     "787.c0bfa0a2.chunk.js.map": "/bucket-list-bingo/static/js/787.c0bfa0a2.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.19d1c7d8.css",
+    "static/css/main.4f2d6be4.css",
     "static/js/main.142448d2.js"
   ]
 }
