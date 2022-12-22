@@ -3,7 +3,7 @@ import { useParams } from 'react-router-dom';
 import CloseIcon from '@mui/icons-material/Close';
 import './BingoViewer.css';
 import { getBucketListByUserId, postBucketListItem } from '../api/API';
-import { setScreenSize } from '../Util';
+import { setScreenSize, checkPassword } from '../Util';
 
 function BingoViewer() {
     const { id } = useParams();
@@ -20,6 +20,16 @@ function BingoViewer() {
     }, [])
 
     useEffect(() => {
+        if (!checkPassword(sessionStorage.getItem('bucket-list-bingo-password'))) {
+            const password = prompt("ENTER PASSWORD")
+            if (checkPassword(password)) {
+                sessionStorage.setItem('bucket-list-bingo-password', password)
+            }
+            else {
+                alert("올바르지 않은 비밀번호입니다.");
+                return;
+            }
+        }
         getBucketListByUserId(id)
             .then(response => {
                 setItems(response.data);
@@ -27,7 +37,6 @@ function BingoViewer() {
                 checkBingo(response.data);
             })
             .catch(error => {
-                console.log(error)
                 alert('문제가 발생했습니다. 잠시 후 다시 시도해주세요.')
             })
     }, [id])
@@ -92,7 +101,6 @@ function BingoViewer() {
     }
 
     const handleCompleteButtonOnClick = (e) => {
-        console.log("c")
         const item = {
             'id': selectedItem.id,
             'complete': true
@@ -107,13 +115,11 @@ function BingoViewer() {
                 setSelectedItem(null)
             })
             .catch(error => {
-                console.log(error)
                 alert('문제가 발생했습니다. 잠시 후 다시 시도해주세요.')
             })
     }
 
     const handleNotCompleteButtonOnClick = (e) => {
-        console.log("inc")
         const item = {
             'id': selectedItem.id,
             'complete': false
@@ -128,7 +134,6 @@ function BingoViewer() {
                 setSelectedItem(null)
             })
             .catch(error => {
-                console.log(error)
                 alert('문제가 발생했습니다. 잠시 후 다시 시도해주세요.')
             })
     }

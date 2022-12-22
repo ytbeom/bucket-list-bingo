@@ -1,13 +1,24 @@
 import React, {useState, useEffect} from 'react';
 import { useNavigate } from 'react-router-dom';
 import './Home.css';
-import { setScreenSize } from '../Util';
+import { setScreenSize, checkPassword } from '../Util';
 
 function Home() {
     const [users, setUsers] = useState([]);
     const navigate = useNavigate();
 
     useEffect(() => {
+        if (!checkPassword(sessionStorage.getItem('bucket-list-bingo-password'))) {
+            const password = prompt("ENTER PASSWORD")
+            if (checkPassword(password)) {
+                sessionStorage.setItem('bucket-list-bingo-password', password)
+            }
+            else {
+                setUsers([]);
+                alert("올바르지 않은 비밀번호입니다.");
+                return;
+            }
+        }
         setScreenSize();
         window.addEventListener('resize', setScreenSize);
         try {
