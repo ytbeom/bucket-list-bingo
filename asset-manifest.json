@@ -1,8 +1,8 @@
 {
   "files": {
-    "main.css": "/bucket-list-bingo/static/css/main.78799b0e.css",
-    "main.js": "/bucket-list-bingo/static/js/main.08dce20e.js",
-    "static/js/787.c0bfa0a2.chunk.js": "/bucket-list-bingo/static/js/787.c0bfa0a2.chunk.js",
+    "main.css": "/bucket-list-bingo/static/css/main.35876d50.css",
+    "main.js": "/bucket-list-bingo/static/js/main.853f2f14.js",
+    "static/js/27.d3f49ca7.chunk.js": "/bucket-list-bingo/static/js/27.d3f49ca7.chunk.js",
     "static/media/background.png": "/bucket-list-bingo/static/media/background.b3760192420fd069526c.png",
     "static/media/NanumBarunGothicBold.otf": "/bucket-list-bingo/static/media/NanumBarunGothicBold.2bec89fba976d2afc95c.otf",
     "static/media/NanumBarunGothicUltraLight.otf": "/bucket-list-bingo/static/media/NanumBarunGothicUltraLight.faa060a4d5af7192ea33.otf",
@@ -16,13 +16,10 @@
     "static/media/NanumBarunGothicUltraLight.woff2": "/bucket-list-bingo/static/media/NanumBarunGothicUltraLight.0c6be051255295577539.woff2",
     "static/media/NanumBarunGothicLight.woff2": "/bucket-list-bingo/static/media/NanumBarunGothicLight.67f8c16179c0ee1d739f.woff2",
     "static/media/NanumBarunGothic.woff2": "/bucket-list-bingo/static/media/NanumBarunGothic.b84c06c23d4a57a9c352.woff2",
-    "index.html": "/bucket-list-bingo/index.html",
-    "main.78799b0e.css.map": "/bucket-list-bingo/static/css/main.78799b0e.css.map",
-    "main.08dce20e.js.map": "/bucket-list-bingo/static/js/main.08dce20e.js.map",
-    "787.c0bfa0a2.chunk.js.map": "/bucket-list-bingo/static/js/787.c0bfa0a2.chunk.js.map"
+    "index.html": "/bucket-list-bingo/index.html"
   },
   "entrypoints": [
-    "static/css/main.78799b0e.css",
-    "static/js/main.08dce20e.js"
+    "static/css/main.35876d50.css",
+    "static/js/main.853f2f14.js"
   ]
 }
