@@ -10,7 +10,7 @@
 #bingo-viewer-div > #count-div {
     font-family: NanumBarunGothic;
     font-weight: 500;
-    height: calc(100vh - min(85vh, 85vw));
+    height: 10vh;
     margin: 0;
     font-size: min(8vw, 8vh);
     display: flex;
@@ -37,7 +37,11 @@
     justify-content: center;
 }
 
-
+#bingo-viewer-div > #board-div > div.completed {
+    background-image: url("../images/complete.png");
+    background-position: center;
+    background-size: cover;
+}
 
 #popup-div {
     top: 0;

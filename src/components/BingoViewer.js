@@ -84,11 +84,12 @@ function BingoViewer() {
         }
         postBucketListItem(item)
             .then(response => {
-                const items = items.map(function(item) {
+                console.log(response.data)
+                const _items = items.map(function(item) {
                     return item.id === response.data.id ? response.data : item;
                 });
-                setItems(items)
-                checkBingo(items)
+                setItems(_items)
+                checkBingo(_items)
             })
             .catch(error => {
                 console.log(error)

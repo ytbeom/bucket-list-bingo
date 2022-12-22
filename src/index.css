@@ -1,5 +1,6 @@
 body {
-  margin: 0;
+    margin: 0;
+    height:100%
 }
 
 @font-face {
@@ -36,9 +37,9 @@ body {
 }
 
 #root {
-  height: calc(var(--vh, 1vh) * 100);
+    height: calc(var(--vh, 1vh) * 100);
 }
 
 #root > div {
    height: 100%;
- }
+}

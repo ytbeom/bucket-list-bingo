@@ -4,6 +4,7 @@ export function getBucketListByUserId(id) {
     return axios.get(
         process.env.REACT_APP_API_URL + '?user=' + id
     );
+
 }
 
 export function postBucketListItem(item) {
