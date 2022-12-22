@@ -12,7 +12,7 @@
   * 사용자 목록은 key-value 형태로 구성되어야 합니다.
   * key는 API 호출 시 parameter로 사용되고 value는 홈 화면 select에 노출됩니다.
 * `REACT_APP_API_URL="http://api-url"`
-  * 사용자의 버킷리스트 조회, 버킷리스트 업데이트에 사용될 API 주소입니다.
+  * [유저별 버킷리스트 조회](https://github.com/ytbeom/bucket-list-bingo#%EC%9C%A0%EC%A0%80%EB%B3%84-%EB%B2%84%ED%82%B7%EB%A6%AC%EC%8A%A4%ED%8A%B8-%EC%A1%B0%ED%9A%8C), [버킷리스트 항목 수정](https://github.com/ytbeom/bucket-list-bingo#%EB%B2%84%ED%82%B7%EB%A6%AC%EC%8A%A4%ED%8A%B8-%ED%95%AD%EB%AA%A9-%EC%88%98%EC%A0%95)에 사용될 API 주소입니다.
 * `REACT_APP_PASSWORD="password"`
   * 원하는 password를 Util.js에 있는 SHA256 메소드로 변환한 뒤 .env에 적어주세요.
   * GitHub Page 배포를 목적으로 했기 때문에 SHA256을 사용했는데 필요없는 분은 checkPassword 메소드를 수정해서 사용하시면 됩니다.
