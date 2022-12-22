@@ -43,9 +43,9 @@ function Home() {
 
     return (
         <div id='home-div'>
-            <p>버킷리스트 빙고</p>
+            <p>Bucket List Bingo</p>
             <select name="users-select" id="users-select" onChange={handleOnChange}>
-                <option key="placeholder" value="" hidden>--이름--</option>
+                <option key="placeholder" value="" hidden>--Select Name--</option>
                 {users.map((user) => (
                     <option key={user.id} value={user.id}>{user.name}</option>
                 ))}
