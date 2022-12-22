@@ -5,6 +5,9 @@
     flex-direction: column;
     align-items: center;
     overflow: hidden;
+    background: #649173;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to bottom, #DBD5A4, #649173);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to bottom, #DBD5A4, #649173); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 }
 
 #bingo-viewer-div > #count-div {
@@ -30,8 +33,8 @@
     font-family: NanumBarunGothic;
     font-weight: 400;
     font-size: min(8vw, 8vh);
-    border: 1px solid black;
     border-radius: 2px;
+    background: white;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -48,6 +51,61 @@
     width: 100%;
     height: 100%;
     position: absolute;
-    z-index: 999;
-    background: rgba(0, 0, 0, 0.3)
+    z-index: 998;
+    background: rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(4px);
+    display: flex;
+}
+
+#popup-div > #popup-content {
+    margin: auto;
+    width: 80%;
+    height: 25%;
+    background: white;
+    display: flex;
+    flex-direction: column;
+    border-radius: 10px;
+}
+
+#popup-div > #popup-content > #popup-content-header {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    height: 24%;
+    justify-content: space-between
+}
+
+#popup-div > #popup-content > #popup-content-header > p {
+    font-family: NanumBarunGothic;
+    font-weight: 500;
+    margin: auto 0 auto 15px;
+    font-size: 1.5rem;
+}
+
+#popup-div > #popup-content > #popup-content-header > svg {
+    margin: auto 15px auto 0;
+}
+
+#popup-div > #popup-content > #popup-content-body {
+    margin: 0;
+    padding: 1% 5%;
+    flex-grow: 1;
+    width: 90%;
+    font-family: NanumBarunGothic;
+    word-break: break-all;
+}
+
+#popup-div > #popup-content > button {
+    height: 18%;
+    width: 80%;
+    font-family: NanumBarunGothic;
+    font-weight: 500;
+    margin: 3px auto;
+    border: none;
+    border-radius: 15px;
+    background: #bfd3c6;
+}
+
+#popup-div > #popup-content > button:disabled {
+    background: rgba(239, 239, 239, 0.3);
 }

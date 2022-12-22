@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
+import CloseIcon from '@mui/icons-material/Close';
 import './BingoViewer.css';
 import { getBucketListByUserId, postBucketListItem } from '../api/API';
 import { setScreenSize } from '../Util';
@@ -21,8 +22,9 @@ function BingoViewer() {
     useEffect(() => {
         getBucketListByUserId(id)
             .then(response => {
-                setItems(response.data)
-                checkBingo(response.data)
+                setItems(response.data);
+                setSelectedItem(null);
+                checkBingo(response.data);
             })
             .catch(error => {
                 console.log(error)
@@ -76,21 +78,33 @@ function BingoViewer() {
     }
 
     const handleBoardOnClick = (e) => {
-        e.stopPropagation()
         const data = JSON.parse(e.target.getAttribute('custom-data'))
-//        setSelectedItem(data)
+        setSelectedItem(data)
+    }
+
+    const handleOutsideOnClick = (e) => {
+        if (e.target.id === 'popup-div')
+            setSelectedItem(null)
+    }
+
+    const handleCloseButtonOnClick = (e) => {
+        setSelectedItem(null)
+    }
+
+    const handleCompleteButtonOnClick = (e) => {
+        console.log("c")
         const item = {
-            'id': data.id,
-            'complete': !data.complete
+            'id': selectedItem.id,
+            'complete': true
         }
         postBucketListItem(item)
             .then(response => {
-                console.log(response.data)
                 const _items = items.map(function(item) {
                     return item.id === response.data.id ? response.data : item;
                 });
                 setItems(_items)
                 checkBingo(_items)
+                setSelectedItem(null)
             })
             .catch(error => {
                 console.log(error)
@@ -98,22 +112,31 @@ function BingoViewer() {
             })
     }
 
-    const handleOutsideOnClick = () => {
-        setSelectedItem(null)
-    }
-
-    const handleCompleteButtonOnClick = () => {
-
-    }
-
-    const handleNotCompleteButtonOnClick = () => {
-
+    const handleNotCompleteButtonOnClick = (e) => {
+        console.log("inc")
+        const item = {
+            'id': selectedItem.id,
+            'complete': false
+        }
+        postBucketListItem(item)
+            .then(response => {
+                const _items = items.map(function(item) {
+                    return item.id === response.data.id ? response.data : item;
+                });
+                setItems(_items)
+                checkBingo(_items)
+                setSelectedItem(null)
+            })
+            .catch(error => {
+                console.log(error)
+                alert('문제가 발생했습니다. 잠시 후 다시 시도해주세요.')
+            })
     }
 
     return (
         <>
             <div id='bingo-viewer-div'>
-                <div id='count-div'>완성한 빙고 수: {lines}</div>
+                <div id='count-div'>{lines} Bingo</div>
                 <div id='board-div'>
                     {items.map((item) => (
                         <div
@@ -128,8 +151,15 @@ function BingoViewer() {
                 </div>
             </div>
             {selectedItem !== null && <div id='popup-div' onClick={handleOutsideOnClick}>
-                {selectedItem.num}
-                {selectedItem.title}
+                <div id='popup-content'>
+                    <div id='popup-content-header'>
+                        <p>{selectedItem.num}</p>
+                        <CloseIcon onClick={handleCloseButtonOnClick}/>
+                    </div>
+                    <div id='popup-content-body'>{selectedItem.title}</div>
+                    <button onClick={handleCompleteButtonOnClick} disabled={selectedItem.complete}>Mark Complete</button>
+                    <button onClick={handleNotCompleteButtonOnClick} disabled={!selectedItem.complete}>Mark Incomplete</button>
+                </div>
             </div>}
         </>
     )
