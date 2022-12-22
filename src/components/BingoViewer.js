@@ -11,6 +11,7 @@ function BingoViewer() {
     const [ selectedItem, setSelectedItem ] = useState(null);
 
     useEffect(() => {
+        setScreenSize();
         window.addEventListener('resize', setScreenSize);
         return () => {
             window.removeEventListener('resize', setScreenSize)

@@ -8,6 +8,7 @@ function Home() {
     const navigate = useNavigate();
 
     useEffect(() => {
+        setScreenSize();
         window.addEventListener('resize', setScreenSize);
         try {
             let users = [];
