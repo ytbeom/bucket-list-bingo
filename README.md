@@ -44,7 +44,7 @@ curl -X GET 'http://api-url?user=ID1'
 ]
 ```
 * Response에는 버킷리스트 항목 25개가 포함되어 있어야 합니다.
-* 각 항목에는 id, num(1~25 권장), pos(0~24), title, complete가 **모두** 존재해야 합니다.
+* 각 항목에는 id, num(1\~25 권장), pos(0\~24), title, complete가 **모두** 존재해야 합니다.
 
 #### 버킷리스트 항목 수정
 * Request
