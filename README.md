@@ -31,7 +31,8 @@ curl -X GET 'http://api-url?user=ID1'
         "num": 1,
         "pos": 0,
         "title": "a",
-        "complete": false
+        "complete": false,
+        "image_urls": []
     },
     (...)
     {
@@ -39,12 +40,13 @@ curl -X GET 'http://api-url?user=ID1'
         "num": 25,
         "pos": 24,
         "title": "z",
-        "complete": false
+        "complete": false,
+        "image_urls": []
     }
 ]
 ```
 * Response에는 버킷리스트 항목 25개가 포함되어 있어야 합니다.
-* 각 항목에는 id, num(1\~25 권장), pos(0\~24), title, complete가 **모두** 존재해야 합니다.
+* 각 항목에는 id, num(화면에 보여지는 번호, 1\~25 권장), pos(항목의 위치, 0\~24), title, complete, image_urls가 **모두** 존재해야 합니다.
 * pos로 sorting된 결과를 받았다고 가정해 동작합니다. 그렇지 않다면 GET API 호출 후 sorting이 필요합니다.
 
 #### 버킷리스트 항목 수정
